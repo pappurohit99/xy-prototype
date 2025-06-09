@@ -18,6 +18,21 @@
     <div id="plot-container">
         <canvas id="plot"></canvas>
     </div>
+    <div id="source-selector">
+        <form id="source-form">
+            <label for="function">Pick a function</label>
+            <select name="function" id="function">
+                <option value="sin">sine</option>
+                <option value="cos">cosine</option>
+                <option value="exp">exponential</option>
+                <option value="log">logarithmic</option>
+                <option value="circle">circle</option>
+                <option value="ellipse">ellipse</option>
+                <option value="lissajous">lissajous</option>
+            </select>
+            <input id="plot-button" type="submit"></input>
+        </form>
+    </div>
 </body>
 
 </html>

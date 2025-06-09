@@ -1,9 +1,22 @@
 from fastapi import FastAPI, Query
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 import numpy as np
 import time
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:8000",
+        "http://127.0.0.1:8000"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 @app.get("/data")
 def get_data(
@@ -13,7 +26,7 @@ def get_data(
 ):
     start_time = time.time()
 
-    num_points = 1_000_000
+    num_points = 100
     t = np.linspace(0, 2 * np.pi, num_points)
 
     if function == "sin":
