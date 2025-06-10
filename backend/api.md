@@ -10,6 +10,7 @@
 | canvas_width   | int    | Yes      | Width of the canvas (must be greater than 0)                               |
 | canvas_height  | int    | Yes      | Height of the canvas (must be greater than 0)                              |
 | function       | str    | No       | Function to generate. Options: sin, cos, exp, log, circle, ellipse, lissajous (default: sin) |
+| num_points  | int    | No      | Number of points (must be greater than 0)                              |
 
 # Supported Functions
 
@@ -38,7 +39,11 @@
 # Example Response (truncated)
 ```JSON
 {
+  "raw_data": 20,
+  "thinned_data": 15,
   "x": [0.0, 0.1, 0.2, ...],
-  "y": [0.0, 0.0998, 0.1987, ...]
+  "y": [0.0, 0.0998, 0.1987, ...],
+  "xLimits": [0.0, 1.8],
+  "yLimits": [-1, 0.987]
 }
 ```
