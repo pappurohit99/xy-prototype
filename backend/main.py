@@ -69,6 +69,7 @@ def get_data(
     print(f"Data generation and thinning took {response_time:.2f} ms")
 
     return JSONResponse(content={
+        'function': function,
         "raw_data": len(x),
         "thinned_data": len(x_thinned),
         "x": x_thinned.tolist(),
